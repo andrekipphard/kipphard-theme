@@ -54,8 +54,9 @@ $text = get_sub_field('text');
 
             <div class="col">
 
+                <?php if( have_rows('skills')): ?>
                     <p class="text-light fw-light best-skills-hero">Best Skills</p>
-                    <?php if( have_rows('skills')): ?>
+                    
                         <ul class="list-group list-group-horizontal list-hero">
                         <?php while( have_rows('skills') ): the_row();
                             $icon = get_sub_field('icon');
@@ -65,7 +66,7 @@ $text = get_sub_field('text');
                         </li>
                         <?php endwhile; ?>
                     </ul>
-                    <?php endif; ?>
+                <?php endif; ?>
 
             </div>
 

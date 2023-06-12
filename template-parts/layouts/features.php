@@ -1,6 +1,7 @@
 <?php
 $headline = get_sub_field('headline');
 $subline = get_sub_field('subline');
+$text = get_sub_field('text');
 ?>
 <div class="row pb-5 pt-5 border-bottom features" id="features">
 
@@ -25,12 +26,19 @@ $subline = get_sub_field('subline');
             </div>
 
         </div>
+        <div class="row pt-4 pb-4">
+
+            <div class="col">
+                <p class="text-light"><?= $text;?></p>
+            </div>
+
+        </div>
 
         <div class="row pt-1 pb-1">
     
             <?php if( have_rows('features')):
                 while( have_rows('features')): the_row();
-                    $feature_image = get_sub_field('feature_image');
+                    $feature_icon = get_sub_field('feature_icon');
                     $feature_headline = get_sub_field('feature_headline');
                     $feature_text = get_sub_field('feature_text');
                     $feature_url = get_sub_field('url');
@@ -38,16 +46,20 @@ $subline = get_sub_field('subline');
 
             <div class="col-12 col-md-6 col-lg-4 pt-5">
 
-                <a href="<?= $feature_url; ?>">
+                <a href="/contact/">
 
-                    <div class="card text-bg-dark p-5" style="width: 95%;">
+                    <div class="card h-100 text-bg-dark p-5" style="width: 95%;">
 
-                        <div class="card-body text-white  ps-0">
-
-                            <img src="<?= wp_get_attachment_image_url($feature_image, 'large');?>" class="card-img-top pb-4" alt="...">
-                            <h5 class="card-title pt-2 pb-2"><?= $feature_headline; ?></h5>
-                            <p class="card-text pb-2"><?= $feature_text; ?></p>
-                            <i class="bi bi-arrow-right icon" style="color:#fff; font-size:2rem;"></i>
+                        <div class="card-body text-white d-flex flex-column ps-0">
+                            <i class="bi text-primary fs-1 bi-<?=$feature_icon;?>"></i>
+                            <div class="h-100 d-flex justify-content-between flex-column">
+                                <h5 class="card-title pt-2 pb-2"><?= $feature_headline; ?></h5>
+                                <div class="d-flex justify-content-between flex-column">
+                                    <p class="card-text pb-2"><?= $feature_text; ?></p>
+                                    <i class="bi bi-arrow-right icon d-flex align-items-center" style="color:#fff; font-size:2rem;"><span class="ms-1" style="font-size:1.25rem; font-style:normal;">Contact me now</span></i>
+                                </div>
+                            </div>
+                            
 
                         </div>
 

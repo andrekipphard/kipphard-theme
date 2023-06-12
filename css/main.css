@@ -10932,6 +10932,13 @@ textarea.form-control-lg {
   margin: 0px;
 }
 
+.list-group-item:hover {
+  background-color: #ffa500 !important;
+}
+.list-group-item:hover .bi {
+  color: black !important;
+}
+
 .navbar-footer {
   font-weight: 600;
   justify-content: center;

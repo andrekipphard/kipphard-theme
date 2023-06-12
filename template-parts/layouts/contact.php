@@ -59,7 +59,7 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label text-uppercase h6">Email address *</label>
                         <input type="email" class="form-control" id="emailqwer" name="emailqwer" aria-describedby="emailHelp" required>
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        <div id="emailHelp" class="form-text">I'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="subject" class="form-label text-uppercase h6">Subject</label>

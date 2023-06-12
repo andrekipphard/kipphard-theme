@@ -36,8 +36,16 @@ get_header();
 								
 							get_template_part('template-parts/layouts/'. get_row_layout() );
 
+						elseif( get_row_layout() == 'filterable_portfolio'):
+							
+							get_template_part('template-parts/layouts/'. get_row_layout() );
+
 						elseif( get_row_layout() == 'resume'):
 							
+							get_template_part('template-parts/layouts/'. get_row_layout() );
+
+						elseif( get_row_layout() == 'toolstack'):
+						
 							get_template_part('template-parts/layouts/'. get_row_layout() );
 
 						elseif( get_row_layout() == 'testimonial'):

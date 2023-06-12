@@ -134,7 +134,12 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 .list-hero{
     margin:0px;
 }
-
+.list-group-item:hover{
+    background-color:$primary!important;
+    .bi{
+        color:black!important;
+    }
+}
 // *** Footer ***
 
 .navbar-footer{
