@@ -35,6 +35,7 @@ $subline = get_sub_field('subline');
                 <span class="d-inline me-2">Category:</span>
                 <label class="checkbox-inline">
                     <select name="categories" id="categories" form="categoriesform">
+                        <option value="all">All</option>
                         <option value="coffee">Coffee</option>
                         <option value="beauty">Beauty</option>
                         <option value="storage">Storage</option>
