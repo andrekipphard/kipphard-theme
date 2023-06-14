@@ -17,40 +17,69 @@ $subline = get_sub_field('subline');
         <!-- Add checkboxes for the filters -->
 
         <div class="row py-3">
-            <div class="co text-center">
-                <span class="d-inline me-2">Build with:</span>
-                <label class="checkbox-inline me-3">
-                    <input type="checkbox" class="form-check-input portfolio-filter" value="Custom Code"> Custom Code
-                </label>
-                <label class="checkbox-inline me-5">
-                    <input type="checkbox" class="form-check-input portfolio-filter" value="Elementor"> Elementor
-                </label>
-                <span class="d-inline me-2">Type:</span>
-                <label class="checkbox-inline me-3">
-                    <input type="checkbox" class="form-check-input portfolio-filter" value="Website"> Website
-                </label>
-                <label class="checkbox-inline me-5">
-                    <input type="checkbox" class="form-check-input portfolio-filter" value="Webshop"> Webshop
-                </label>
-                <span class="d-inline me-2">Category:</span>
+            <div class="col text-center">
+                <span class="d-inline me-2 ms-5">Build with:</span>
+                <?php $built_with_list = []; // Create an empty array to store the existing values
+                if (have_rows('portfolio')):
+                    while (have_rows('portfolio')):
+                        the_row();
+                        $portfolio_built_with = get_sub_field('portfolio_built_with');
+                        if (!in_array($portfolio_built_with, $built_with_list)) {
+                            // Check if the value does not exist in the array
+                            $built_with_list[] = $portfolio_built_with; // Add the value to the array
+                            ?>
+                            <label class="checkbox-inline me-3">
+                                <input type="checkbox" class="form-check-input portfolio-filter" value="<?= $portfolio_built_with; ?>"><?= $portfolio_built_with; ?>
+                            </label>
+                            <?php
+                        }
+                    endwhile;
+                endif;
+                ?>
+                <span class="d-inline me-2 ms-5">Type:</span>
+                <?php $type_list = []; // Create an empty array to store the existing values
+                if (have_rows('portfolio')):
+                    while (have_rows('portfolio')):
+                        the_row();
+                        $portfolio_type = get_sub_field('portfolio_type');
+                        if (!in_array($portfolio_type, $type_list)) {
+                            // Check if the value does not exist in the array
+                            $type_list[] = $portfolio_type; // Add the value to the array
+                            ?>
+                            <label class="checkbox-inline me-3">
+                                <input type="checkbox" class="form-check-input portfolio-filter-type" value="<?= $portfolio_type; ?>"><?= $portfolio_type; ?>
+                            </label>
+                            <?php
+                        }
+                    endwhile;
+                endif;
+                ?>
+                <span class="d-inline me-2 ms-5">Category:</span>
                 <label class="checkbox-inline">
                     <select name="categories" id="categories" form="categoriesform">
                         <option value="all">All</option>
-                        <option value="coffee">Coffee</option>
-                        <option value="beauty">Beauty</option>
-                        <option value="storage">Storage</option>
-                        <option value="cyber-security">Cyber Security</option>
-                        <option value="real-estate">Real Estate</option>
-                        <option value="lawyer">Lawyer</option>
-                        <option value="craftsman">Craftsman</option>
-                        <option value="car-service">Car Service</option>
-                        <option value="dental">Dental</option>
-                        <option value="pets">Pets</option>
-                        <option value="handmade">Handmade</option>
-                        <option value="industrial">Industrial</option>
+                        <?php $category_list = []; // Create an empty array to store the existing values
+                        if (have_rows('portfolio')):
+                            while (have_rows('portfolio')):
+                                the_row();
+                                $portfolio_category = get_sub_field('portfolio_category');
+                                
+                                if (!in_array($portfolio_category, $category_list)) {
+                                    // Check if the value does not exist in the array
+                                    $category_list[] = $portfolio_category; // Add the value to the array
+                                }
+                            endwhile;
+                        endif;
+                        sort($category_list); // Sort the array alphabetically
+                        foreach ($category_list as $category) {
+                            ?>
+                            <option value="<?= $category; ?>"><?= $category; ?></option>
+                            <?php
+                        }
+                        ?>
                     </select>
-
                 </label>
+                <button class="btn btn-outline ms-5 text-primary">Reset Filter</button>
             </div>
         </div>
 
@@ -60,18 +89,20 @@ $subline = get_sub_field('subline');
             if (have_rows('portfolio')):
                 while (have_rows('portfolio')):
                     the_row();
+                    $portfolio_built_with = get_sub_field('portfolio_built_with');
+                    $portfolio_type = get_sub_field('portfolio_type');
                     $portfolio_category = get_sub_field('portfolio_category');
                     $portfolio_headline = get_sub_field('portfolio_headline');
                     $portfolio_image = get_sub_field('portfolio_image');
                     $portfolio_popup = get_sub_field('portfolio_popup');
                     $portfolio_background_image = get_sub_field('portfolio_background_image');
             ?>
-                    <div class="col-12 col-md-6 col-lg-4 pt-3 mb-3 pb-3 portfolio-item" data-categories="<?= $portfolio_category; ?>">
+                    <div class="col-12 col-md-6 col-lg-4 pt-3 mb-3 pb-3 portfolio-item" data-built-with="<?= $portfolio_built_with; ?>" data-types="<?= $portfolio_type; ?>" data-categories="<?= $portfolio_category; ?>">
                         <a href="<?= $portfolio_popup; ?>">
                             <div class="card h-100 text-bg-dark p-5" style="width:95%; background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('<?= wp_get_attachment_image_url($portfolio_background_image, 'large');?>');">
                                 <div class="card-body pb-0 pe-0 text-white ps-0">
                                     <img src="<?= wp_get_attachment_image_url($portfolio_image, 'large');?>" class="card-img-top pb-4" alt="...">
-                                    <h6 class="card-title pt-2 text-primary text-uppercase fs-6"><?= $portfolio_category; ?></h6>
+                                    <h6 class="card-title pt-2 text-primary text-uppercase fs-6"><?= $portfolio_built_with; ?>, <?= $portfolio_type; ?>, <?= $portfolio_category; ?></h6>
                                     <h4 class="card-title pt-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4>
                                 </div>
                             </div>
@@ -84,45 +115,3 @@ $subline = get_sub_field('subline');
         </div>
     </div>
 </div>
-<!-- JavaScript code to handle the filtering -->
-<script>
-    // Wait for the document to be ready
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all the portfolio filter checkboxes
-        const filterCheckboxes = document.querySelectorAll('.portfolio-filter');
-
-        // Add event listener to each checkbox
-        filterCheckboxes.forEach(function(checkbox) {
-            checkbox.addEventListener('change', handleFilterChange);
-        });
-
-        // Function to handle filter change
-        function handleFilterChange() {
-            // Get the selected filter values
-            const selectedFilters = Array.from(filterCheckboxes)
-                .filter(function(checkbox) {
-                    return checkbox.checked;
-                })
-                .map(function(checkbox) {
-                    return checkbox.value;
-                });
-
-            // Show/hide portfolio items based on selected filters
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            portfolioItems.forEach(function(item) {
-                const categories = item.getAttribute('data-categories').split(',');
-
-                if (selectedFilters.length === 0 || selectedFilters.every(function(filter) {
-                        return categories.some(function(category) {
-                            return category.trim() === filter;
-                        });
-                    })) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-    });
-</script>
