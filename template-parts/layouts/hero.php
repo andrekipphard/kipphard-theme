@@ -1,5 +1,4 @@
 <?php
-$image = get_sub_field('background_image');
 $headline = get_sub_field('headline');
 $subline = get_sub_field('subline');
 $text = get_sub_field('text');
@@ -36,7 +35,7 @@ $text = get_sub_field('text');
 
             <div class="col">
 
-                    <p class="text-light fw-light social-media-hero">Social Media</p>
+                    <p class="text-light fw-light social-media-hero text-white">Social Media</p>
                     <?php if( have_rows('social_media')): ?>
                     <ul class="list-group list-group-horizontal list-hero">
                         <?php while( have_rows('social_media') ): the_row();
@@ -75,7 +74,26 @@ $text = get_sub_field('text');
     </div>
 
     <div class="col-12 col-lg-6">
-        <?= wp_get_attachment_image( $image, 'large'); ?>
+        <div id="heroSliderIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <?php if(have_rows('slider')):?>
+                    <?php while(have_rows('slider')): the_row();?>
+                        <button type="button" data-bs-target="#heroSliderIndicators" data-bs-slide-to="<?php $rowIndex = get_row_index() - 1; echo $rowIndex;?>" <?php if(get_row_index()==1):?>class="active" <?php endif;?>aria-current="true" aria-label="Slide <?php echo get_row_index();?>"></button>
+                    <?php endwhile;?>
+                <?php endif;?>
+            </div>
+            <div class="carousel-inner">
+                <?php if(have_rows('slider')):?>
+                    <?php while(have_rows('slider')): the_row();
+                        $mobile_image = get_sub_field('mobile_image');
+                        $laptop_image = get_sub_field('laptop_image');?>
+                        <div class="carousel-item<?php if(get_row_index()==1):?> active<?php endif;?> text-end" style="background-image:url('<?= wp_get_attachment_image_url($laptop_image, 'large');?>'); background-size:contain; background-repeat:no-repeat; background-position:center;">
+                            <img src="<?= wp_get_attachment_image_url($mobile_image, 'large');?>" style="width:300px">
+                        </div>
+                    <?php endwhile;?>
+                <?php endif;?>
+            </div>
+        </div>
     </div>
 
 </div>

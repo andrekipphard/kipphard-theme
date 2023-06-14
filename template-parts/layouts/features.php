@@ -46,17 +46,17 @@ $text = get_sub_field('text');
 
             <div class="col-12 col-md-6 col-lg-4 pt-5">
 
-                <a href="/contact/">
+                <a href="#contact">
 
                     <div class="card h-100 text-bg-dark p-5" style="width: 95%;">
 
-                        <div class="card-body text-white d-flex flex-column ps-0">
+                        <div class="card-body d-flex flex-column ps-0">
                             <i class="bi text-primary fs-1 bi-<?=$feature_icon;?>"></i>
                             <div class="h-100 d-flex justify-content-between flex-column">
                                 <h5 class="card-title pt-2 pb-2"><?= $feature_headline; ?></h5>
                                 <div class="d-flex justify-content-between flex-column">
                                     <p class="card-text pb-2"><?= $feature_text; ?></p>
-                                    <i class="bi bi-arrow-right icon d-flex align-items-center" style="color:#fff; font-size:2rem;"><span class="ms-1" style="font-size:1.25rem; font-style:normal;">Contact me now</span></i>
+                                    <i class="bi bi-arrow-right icon d-flex align-items-center text-primary" style="font-size:1.5rem;"><span class="ms-1 text-primary" style="font-size:1rem; font-style:normal;">Contact me now</span></i>
                                 </div>
                             </div>
                             

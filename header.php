@@ -37,7 +37,6 @@
 						</li>
 
 					</ul>
-
 				</div>
 				<div class="col-md-8 d-flex justify-content-end">
 
@@ -49,7 +48,7 @@
 							$icon = get_sub_field('icon');
 							?>
 
-							<li>
+							<li class="text-white">
 								<?php if ($type == 'icon') : ?>
 									<i class="bi bi-<?= $icon; ?> rounded-circle"></i> <?php the_sub_field('text'); ?>
 								<?php else : ?>
