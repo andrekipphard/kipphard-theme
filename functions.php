@@ -145,7 +145,9 @@ function kipphard_scripts() {
 	wp_style_add_data( 'kipphard-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'kipphard-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'kipphard/portfolio-filter', get_template_directory_uri(). '/js/portfolio-filter.js', array('jquery'), _S_VERSION );
+	wp_enqueue_script( 'kipphard/portfolio-filter-desktop', get_template_directory_uri(). '/js/portfolio-filter-desktop.js', array('jquery'), _S_VERSION );
+	wp_enqueue_script( 'kipphard/portfolio-filter-mobile', get_template_directory_uri(). '/js/portfolio-filter-mobile.js', array('jquery'), _S_VERSION );
+	wp_enqueue_script( 'kipphard/offcanvas', get_template_directory_uri(). '/js/offcanvas.js', array('jquery'), _S_VERSION );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

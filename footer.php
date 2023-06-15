@@ -13,14 +13,14 @@
 
 	<footer id="colophon" class="site-footer ">
 		<div class="container">
-			<div class="site-info border-top border-dark pt-5 mt-5 text-white-50">
+			<div class="site-info border-top border-dark pt-3 mt-lg-5 text-white-50">
 				<div class="row">
-					<div class="col text-sm-center text-md-start pb-sm-4">
+					<div class="col-12 col-lg-6 text-sm-center text-center text-lg-start copyright-col pt-3 pt-lg-0">
 						© <?= date("Y");?> André Kipphard.
 					</div>
-					<div class="col justify-content-md-center">
-						<nav class="navbar-footer navbar-expand-lg navbar-light bg-light justify-content-end">
-							<div class="navbar-nav text-end">
+					<div class="col-12 col-lg-6 justify-content-md-center">
+						<nav class="navbar-footer navbar-expand-lg navbar-light bg-light justify-content-lg-end menu-col">
+							<div class="navbar-nav text-lg-end">
 									<?php
 										wp_nav_menu(
 											array(

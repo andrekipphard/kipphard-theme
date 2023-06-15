@@ -7,9 +7,9 @@
     $work_experience_start_date = get_sub_field('work_experience_start_date');
     $work_experience_finish_date = get_sub_field('work_experience_finish_date');
 ?>
-<div class="row pb-5 pt-5 border-bottom resume" id="resume">
+<div class="row py-3 py-lg-5 border-bottom resume" id="resume">
 
-    <div class="col-12 col-lg-12 pt-5 pb-5">
+    <div class="col-12 col-lg-12 py-3 py-lg-5">
 
         <div class="row pb-1 pt-2 h6 text-primary text-center text-uppercase">
 
@@ -30,7 +30,7 @@
             </div>
 
         </div>
-        <div class="row pt-4 pb-4">
+        <div class="row py-lg-4">
 
             <div class="col text-center">
                 <p class="text-light"><?= $text;?></p>
@@ -38,7 +38,7 @@
 
         </div>
 
-        <div class="row pb-4 pt-4">
+        <div class="row pb-4 pt-4 mobile-hide">
 
             <ul class="nav nav-tabs nav-justified border-0 ms-0 pe-0" id="myTab" role="tablist">
 
@@ -187,6 +187,57 @@
 
             </div>
 
+        </div>
+
+        <div class="row pt-4 desktop-hide">
+            <div class="col">
+                <div class="h4 text-primary text-center">Work Experience</div>
+                <div class="accordion" id="accordionWorkexperience">
+                    <?php if( have_rows('experience')):
+                        while( have_rows('experience')): the_row();
+                            $date = get_sub_field('date');
+                            $topic = get_sub_field('topic');
+                            $place = get_sub_field('place');
+                            $content = get_sub_field('content');?>
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Workexperience" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>">
+                                    <?= $date; ?>, <?= $topic; ?> at <?= $place;?>
+                                </button>
+                                </h2>
+                                <div id="collapse<?php echo get_row_index();?>Workexperience" class="accordion-collapse collapse<?php if(get_row_index()==1):?> show<?php endif;?>" data-bs-parent="#accordionWorkexperience">
+                                    <div class="accordion-body">
+                                    <?= $content;?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endwhile;?>
+                    <?php endif;?>
+                </div>
+                <div class="h4 text-primary text-center mt-5">Education</div>
+                <div class="accordion" id="accordionEducation">
+                    <?php if( have_rows('education')):
+                        while( have_rows('education')): the_row();
+                            $date = get_sub_field('date');
+                            $topic = get_sub_field('topic');
+                            $place = get_sub_field('place');
+                            $content = get_sub_field('content');?>
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Education" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>">
+                                    <?= $date; ?>, <?= $topic; ?> at <?= $place;?>
+                                </button>
+                                </h2>
+                                <div id="collapse<?php echo get_row_index();?>Education" class="accordion-collapse collapse<?php if(get_row_index()==1):?> show<?php endif;?>" data-bs-parent="#accordionEducation">
+                                    <div class="accordion-body">
+                                    <?= $content;?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endwhile;?>
+                    <?php endif;?>
+                </div>
+            </div>
         </div>
 
     </div>

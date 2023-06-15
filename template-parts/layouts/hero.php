@@ -3,11 +3,11 @@ $headline = get_sub_field('headline');
 $subline = get_sub_field('subline');
 $text = get_sub_field('text');
 ?>
-<div class="row pt-5 pb-5 border-bottom">
+<div class="row py-lg-5 pt-3 pb-5 border-bottom">
 
-    <div class="col-12 col-lg-6 pt-5 pb-5 pe-5">
+    <div class="col-12 col-lg-6 py-lg-5 py-3 pe-5">
 
-        <div class="row pt-1 pb-1 h6 text-primary text-uppercase">
+        <div class="row py-1 h6 text-primary text-uppercase">
 
             <div class="col">
                 <?= $subline;?>
@@ -15,7 +15,7 @@ $text = get_sub_field('text');
 
         </div>
 
-        <div class="row pt-1 pb-1 h1">
+        <div class="row py-1 h1">
 
             <div class="col">
                 <?= $headline;?>
@@ -23,7 +23,7 @@ $text = get_sub_field('text');
 
         </div>
 
-        <div class="row pt-4 pb-4">
+        <div class="row py-lg-4 py-0">
 
             <div class="col">
                 <p class="text-light"><?= $text;?></p>
@@ -73,7 +73,7 @@ $text = get_sub_field('text');
 
     </div>
 
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6 py-3 py-lg-0">
         <div id="heroSliderIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <?php if(have_rows('slider')):?>

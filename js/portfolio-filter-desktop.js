@@ -1,115 +1,115 @@
 // Wait for the document to be ready
 document.addEventListener('DOMContentLoaded', function() {
     // Get all the portfolio filter checkboxes
-    const filterCheckboxes = document.querySelectorAll('.portfolio-filter');
+    const filterCheckboxesDesktop = document.querySelectorAll('.portfolio-filter-desktop');
   
     // Add event listener to each checkbox
-    filterCheckboxes.forEach(function(checkbox) {
-      checkbox.addEventListener('change', handleFilterChange);
+    filterCheckboxesDesktop.forEach(function(checkbox) {
+      checkbox.addEventListener('change', handleFilterChangeDesktop);
     });
   
     // Get all the portfolio filter type checkboxes
-    const filterTypeCheckboxes = document.querySelectorAll('.portfolio-filter-type');
+    const filterTypeCheckboxesDesktop = document.querySelectorAll('.portfolio-filter-type-desktop');
   
     // Add event listener to each type checkbox
-    filterTypeCheckboxes.forEach(function(checkbox) {
-      checkbox.addEventListener('change', handleTypeFilterChange);
+    filterTypeCheckboxesDesktop.forEach(function(checkbox) {
+      checkbox.addEventListener('change', handleTypeFilterChangeDesktop);
     });
   
     // Get the category dropdown
-    const categoryDropdown = document.getElementById('categories');
+    const categoryDropdownDesktop = document.getElementById('categories-desktop');
   
     // Add event listener to the category dropdown
-    categoryDropdown.addEventListener('change', handleCategoryFilterChange);
+    categoryDropdownDesktop.addEventListener('change', handleCategoryFilterChangeDesktop);
   
     // Get the "Reset Filter" button
-    const resetButton = document.querySelector('.btn-outline');
+    const resetButtonDesktop = document.querySelector('.reset-desktop');
   
     // Add event listener to the "Reset Filter" button
-    resetButton.addEventListener('click', resetFilters);
+    resetButtonDesktop.addEventListener('click', resetFiltersDesktop);
   
     // Function to handle filter change
-    function handleFilterChange() {
+    function handleFilterChangeDesktop() {
       // Uncheck all other checkboxes in the same group
-      filterCheckboxes.forEach(function(checkbox) {
+      filterCheckboxesDesktop.forEach(function(checkbox) {
         if (checkbox !== this) {
           checkbox.checked = false;
         }
       }, this);
   
       // Get the selected filter values
-      const selectedFilters = getSelectedFilterValues();
+      const selectedFiltersDesktop = getSelectedFilterValuesDesktop();
   
       // Show/hide portfolio items based on selected filters
-      filterPortfolioItems(selectedFilters);
+      filterPortfolioItemsDesktop(selectedFiltersDesktop);
   
       // Update category dropdown options based on selected filters
-      updateCategoryOptions(selectedFilters);
+      updateCategoryOptionsDesktop(selectedFiltersDesktop);
     }
   
     // Function to handle type filter change
-    function handleTypeFilterChange() {
+    function handleTypeFilterChangeDesktop() {
       // Uncheck all other checkboxes in the same group
-      filterTypeCheckboxes.forEach(function(checkbox) {
+      filterTypeCheckboxesDesktop.forEach(function(checkbox) {
         if (checkbox !== this) {
           checkbox.checked = false;
         }
       }, this);
   
       // Get the selected filter values
-      const selectedFilters = getSelectedFilterValues();
+      const selectedFiltersDesktop = getSelectedFilterValuesDesktop();
   
       // Show/hide portfolio items based on selected filters
-      filterPortfolioItems(selectedFilters);
+      filterPortfolioItemsDesktop(selectedFiltersDesktop);
   
       // Update category dropdown options based on selected filters
-      updateCategoryOptions(selectedFilters);
+      updateCategoryOptionsDesktop(selectedFiltersDesktop);
     }
   
     // Function to handle category filter change
-    function handleCategoryFilterChange() {
+    function handleCategoryFilterChangeDesktop() {
       // Get the selected filter values
-      const selectedFilters = getSelectedFilterValues();
+      const selectedFiltersDesktop = getSelectedFilterValuesDesktop();
   
       // Show/hide portfolio items based on selected filters
-      filterPortfolioItems(selectedFilters);
+      filterPortfolioItemsDesktop(selectedFiltersDesktop);
     }
   
     // Function to get the selected filter values
-    function getSelectedFilterValues() {
-      const selectedFilters = {
+    function getSelectedFilterValuesDesktop() {
+      const selectedFiltersDesktop = {
         builtWith: [],
         types: [],
         category: ''
       };
   
       // Get the selected built with filter
-      selectedFilters.builtWith = Array.from(filterCheckboxes)
+      selectedFiltersDesktop.builtWith = Array.from(filterCheckboxesDesktop)
         .filter(checkbox => checkbox.checked)
         .map(checkbox => checkbox.value);
   
       // Get the selected type filter
-      selectedFilters.types = Array.from(filterTypeCheckboxes)
+      selectedFiltersDesktop.types = Array.from(filterTypeCheckboxesDesktop)
         .filter(checkbox => checkbox.checked)
         .map(checkbox => checkbox.value);
   
       // Get the selected category filter
-      selectedFilters.category = categoryDropdown.value;
+      selectedFiltersDesktop.category = categoryDropdownDesktop.value;
   
-      return selectedFilters;
+      return selectedFiltersDesktop;
     }
   
     // Function to show/hide portfolio items based on selected filters
-    function filterPortfolioItems(selectedFilters) {
+    function filterPortfolioItemsDesktop(selectedFiltersDesktop) {
       const portfolioItems = document.querySelectorAll('.portfolio-item');
       portfolioItems.forEach(function(item) {
         const builtWith = item.getAttribute('data-built-with').split(',');
         const types = item.getAttribute('data-types').split(',');
         const categories = item.getAttribute('data-categories').split(',');
   
-        const builtWithMatch = selectedFilters.builtWith.length === 0 || selectedFilters.builtWith.some(filter => builtWith.includes(filter));
-        const typesMatch = selectedFilters.types.length === 0 || selectedFilters.types.some(filter => types.includes(filter));
-        const categoryMatch = selectedFilters.category === 'all' || categories.includes(selectedFilters.category);
+        const builtWithMatch = selectedFiltersDesktop.builtWith.length === 0 || selectedFiltersDesktop.builtWith.some(filter => builtWith.includes(filter));
+        const typesMatch = selectedFiltersDesktop.types.length === 0 || selectedFiltersDesktop.types.some(filter => types.includes(filter));
+        const categoryMatch = selectedFiltersDesktop.category === 'all' || categories.includes(selectedFiltersDesktop.category);
   
         if (builtWithMatch && typesMatch && categoryMatch) {
           item.style.display = 'block';
@@ -120,14 +120,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     // Function to update category dropdown options based on selected filters
-    function updateCategoryOptions(selectedFilters) {
-      const categoryOptions = Array.from(categoryDropdown.options);
+    function updateCategoryOptionsDesktop(selectedFiltersDesktop) {
+      const categoryOptions = Array.from(categoryDropdownDesktop.options);
   
       categoryOptions.forEach(function(option) {
         const category = option.value;
   
         // Check if the category is compatible with the selected filters
-        const isCompatible = checkCategoryCompatibility(category, selectedFilters);
+        const isCompatible = checkCategoryCompatibilityDesktop(category, selectedFiltersDesktop);
   
         // Disable incompatible options and enable compatible options
         if (isCompatible) {
@@ -135,15 +135,15 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
           option.disabled = true;
           // Deselect disabled options
-          if (category === selectedFilters.category) {
-            categoryDropdown.value = 'all';
+          if (category === selectedFiltersDesktop.category) {
+            categoryDropdownDesktop.value = 'all';
           }
         }
       });
     }
   
     // Function to check if a category is compatible with the selected filters
-    function checkCategoryCompatibility(category, selectedFilters) {
+    function checkCategoryCompatibilityDesktop(category, selectedFiltersDesktop) {
       const portfolioItems = document.querySelectorAll('.portfolio-item');
   
       for (let i = 0; i < portfolioItems.length; i++) {
@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const builtWith = item.getAttribute('data-built-with').split(',');
         const types = item.getAttribute('data-types').split(',');
   
-        const builtWithMatch = selectedFilters.builtWith.length === 0 || selectedFilters.builtWith.every(filter => builtWith.includes(filter));
-        const typesMatch = selectedFilters.types.length === 0 || selectedFilters.types.every(filter => types.includes(filter));
+        const builtWithMatch = selectedFiltersDesktop.builtWith.length === 0 || selectedFiltersDesktop.builtWith.every(filter => builtWith.includes(filter));
+        const typesMatch = selectedFiltersDesktop.types.length === 0 || selectedFiltersDesktop.types.every(filter => types.includes(filter));
         const categoryMatch = category === 'all' || item.getAttribute('data-categories').split(',').includes(category);
   
         if (builtWithMatch && typesMatch && categoryMatch) {
@@ -164,22 +164,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     // Function to reset the filters
-    function resetFilters() {
+    function resetFiltersDesktop() {
       // Uncheck all filter checkboxes
-      filterCheckboxes.forEach(function(checkbox) {
+      filterCheckboxesDesktop.forEach(function(checkbox) {
         checkbox.checked = false;
       });
   
       // Uncheck all type checkboxes
-      filterTypeCheckboxes.forEach(function(checkbox) {
+      filterTypeCheckboxesDesktop.forEach(function(checkbox) {
         checkbox.checked = false;
       });
   
       // Reset the category dropdown to the default value
-      categoryDropdown.value = 'all';
+      categoryDropdownDesktop.value = 'all';
   
       // Reset the selected filters
-      const selectedFilters = getSelectedFilterValues();
+      const selectedFiltersDesktop = getSelectedFilterValuesDesktop();
   
       // Show all portfolio items
       const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -188,6 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   
       // Update category dropdown options based on selected filters
-      updateCategoryOptions(selectedFilters);
+      updateCategoryOptionsDesktop(selectedFiltersDesktop);
     }
   });  

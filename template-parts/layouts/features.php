@@ -3,9 +3,9 @@ $headline = get_sub_field('headline');
 $subline = get_sub_field('subline');
 $text = get_sub_field('text');
 ?>
-<div class="row pb-5 pt-5 border-bottom features" id="features">
+<div class="row py-3 py-lg-5 border-bottom features" id="services">
 
-    <div class="col-12 col-lg-12 pt-5 pb-5">
+    <div class="col-12 col-lg-12 py-3 py-lg-5">
     
         <div class="row pt-1 pb-1 h6 text-primary text-uppercase">
 
@@ -26,7 +26,7 @@ $text = get_sub_field('text');
             </div>
 
         </div>
-        <div class="row pt-4 pb-4">
+        <div class="row py-lg-4">
 
             <div class="col">
                 <p class="text-light"><?= $text;?></p>
@@ -44,11 +44,11 @@ $text = get_sub_field('text');
                     $feature_url = get_sub_field('url');
             ?>
 
-            <div class="col-12 col-md-6 col-lg-4 pt-5">
+            <div class="col-12 col-md-6 col-lg-4 pt-lg-5 pt-3 mb-3 mb-md-2 mb-lg-0">
 
                 <a href="#contact">
 
-                    <div class="card h-100 text-bg-dark p-5" style="width: 95%;">
+                    <div class="card h-100 text-bg-dark p-lg-5 p-4">
 
                         <div class="card-body d-flex flex-column ps-0">
                             <i class="bi text-primary fs-1 bi-<?=$feature_icon;?>"></i>
@@ -56,7 +56,7 @@ $text = get_sub_field('text');
                                 <h5 class="card-title pt-2 pb-2"><?= $feature_headline; ?></h5>
                                 <div class="d-flex justify-content-between flex-column">
                                     <p class="card-text pb-2"><?= $feature_text; ?></p>
-                                    <i class="bi bi-arrow-right icon d-flex align-items-center text-primary" style="font-size:1.5rem;"><span class="ms-1 text-primary" style="font-size:1rem; font-style:normal;">Contact me now</span></i>
+                                    <i class="bi bi-arrow-right icon d-flex align-items-center text-primary mb-3 mb-lg-0" style="font-size:1.5rem;"><span class="ms-1 text-primary" style="font-size:1rem; font-style:normal;">Contact me now</span></i>
                                 </div>
                             </div>
                             

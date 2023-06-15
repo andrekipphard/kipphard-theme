@@ -38,6 +38,17 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 h1, h2, h3, h4, h5, h6{
     color:#fff;
 }
+.desktop-hide{
+    display:none;
+}
+@include media-breakpoint-down(lg){
+    .mobile-hide{
+        display:none;
+    }
+    .desktop-hide{
+        display:flex;
+    }
+}
 // *** Header ***
 .top-bar{
     font-size: 0.8rem;
@@ -106,10 +117,20 @@ h1, h2, h3, h4, h5, h6{
         padding: 1rem 1rem;
     }
     @include media-breakpoint-down(lg){
-        li:last-child a{
-           padding:1rem 0rem 1rem 1rem;
+        .navbar-toggler-custom-icon, .offcanvas-close {
+            color: $primary;
+            font-size: 40px;
+            border: 0;
+            background-color: transparent;
         }
         justify-content: end;
+        a{
+            font-size:1.5rem;
+
+        }
+        li{
+            margin-bottom:20px;
+        }
     }
     @include media-breakpoint-down(lg){
         .menu{
@@ -157,6 +178,11 @@ h1, h2, h3, h4, h5, h6{
         color:black!important;
     }
 }
+@include media-breakpoint-down(lg){
+    .carousel-indicators{
+        bottom:-3rem;
+    }
+}
 // *** Footer ***
 
 .navbar-footer{
@@ -175,21 +201,31 @@ h1, h2, h3, h4, h5, h6{
         text-decoration: none;
     }
     @include media-breakpoint-down(lg){
-        li:last-child a{
-           padding:1rem 0rem 1rem 1rem;
+
+        display:block;
+        a{
+            padding:0;
         }
-        justify-content: end;
     }
     
     .menu{
         list-style-type: none;
-        display:inline-flex;
+        display:flex;
+        justify-content: space-between;
         padding-left: 0px;
         margin-left:0px;
         margin-bottom: 0px;
     }
+    
 }
-
+@include media-breakpoint-down(lg){
+    .menu-col{
+        order:1;    
+    }
+    .copyright-col{
+        order:2;
+    }
+}
 
 
 // *** Card ***
@@ -220,6 +256,7 @@ h1, h2, h3, h4, h5, h6{
             margin-bottom:-4rem;
             transition: margin 300ms;
         }
+        width: 95%;
     }
     .card:hover{
         .icon{
@@ -228,6 +265,11 @@ h1, h2, h3, h4, h5, h6{
         .card-body{
             margin-top:-1.5rem;
             margin-bottom:-2.5rem;
+        }
+    }
+    @include media-breakpoint-down(lg){
+        .card{
+            width:100%;
         }
     }
 }
@@ -260,10 +302,37 @@ select{
         }
         color:$primary;
     }
+    @include media-breakpoint-down(lg){
+        .card{
+            width:100%;
+        }
+    }
 }
-
+.mobile-filter{
+    display:none;
+}
+@include media-breakpoint-down(lg){
+    .desktop-filter{
+        display:none;
+    }
+    .mobile-filter{
+        display:flex;
+    }
+}
 // *** Resume ***
-
+.accordion-button::after{
+    background-image: url('data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 16 16\' fill=\'%23d0d0d0\'%3e%3cpath fill-rule=\'evenodd\' d=\'M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z\'/%3e%3c/svg%3e');
+}
+.accordion-button:not(.collapsed){
+    box-shadow: none;
+    border-color:transparent;
+    color:$primary; 
+    background-color:transparent;
+}
+.accordion-button:focus{
+    border-color:transparent;
+    box-shadow:none;
+}
 .nav-tabs{
     background-color:var(--bs-dark);
     
@@ -468,6 +537,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, in
     border-radius: 0.375rem;
     position: relative;
 }
+@include media-breakpoint-down(lg){
+    .testimonial-user-col{
+        box-shadow:none;
+    }
+}
+
 /*** Modal ***/
 .modal-content{
     background-color:$body-bg;

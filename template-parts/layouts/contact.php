@@ -6,8 +6,8 @@
     $text = get_sub_field('text');
     $image = get_sub_field('image');
 ?>
-<div class="row pb-5 pt-5 contact" id="contact">
-    <div class="col-12 col-lg-12 pt-5 pb-5">
+<div class="row pt-3 py-lg-5 contact" id="contact">
+    <div class="col-12 col-lg-12 pt-3 py-lg-5">
         <div class="row text-center">
             <div class="col">
                 <div class="h6 pt-1 pb-1 text-primary text-uppercase">
@@ -18,8 +18,8 @@
                 </div>
                 </div>
             </div>
-        <div class="row pb-4 pt-4 d-flex justify-content-between"> 
-            <div class="col-lg-5 col-md-5 col-12 mb-sm-5 mb-md-0 mb-lg-0 testimonial-user-col rounded p-5">
+        <div class="row py-lg-4 d-flex justify-content-between"> 
+            <div class="col-lg-5 col-12 mb-sm-5 mb-md-0 mb-lg-0 testimonial-user-col rounded p-4 p-lg-5">
                 <img src="<?= wp_get_attachment_image_url($image, 'large');?>" class="rounded mb-3">
                 <div class="h3 pb-1">
                     <? $name;?>
@@ -43,7 +43,7 @@
                     </ul>
                     <?php endif; ?>
             </div>
-            <div class="col-lg-6 col-md-6 col-12 testimonial-user-col p-5 rounded">
+            <div class="col-lg-6 col-12 testimonial-user-col p-4 p-lg-5 rounded">
                 <form id="form-id" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
                     <!-- Real Fields -->
                     <div class="row mb-3">

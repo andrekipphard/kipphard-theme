@@ -78,9 +78,42 @@
 
 				<div class="col-6 col-md-10 col-lg-9 d-flex align-items-center justify-content-end justify-content-lg-end">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light">
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
+						<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-custom-icon"><i class="bi bi-list"></i></span>
 						</button>
+						<!-- *** Offcanvas *** -->
+						<div class="offcanvas offcanvas-start d-flex d-lg-none bg-black" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+							<div class="row offcanvas-header mt-3 py-3">
+								<div class="col-6">
+									<?php
+										the_custom_logo();
+									?>
+								</div>
+								<div class="col-6 d-flex justify-content-end align-self-center">
+									<button type="button" class="offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close">
+										<i class="bi bi-x-lg"></i>
+									</button>
+								</div>	
+							</div>
+							<div class="row offcanvas-body">
+								<div class="col-12 d-flex justify-content-center align-self- ps-0">
+									<nav class="navbar-header text-white d-flex flex-column align-items-center">
+										<div class="navbar-nav text-white text-center mb-5">
+											<?php
+													wp_nav_menu(
+														array(
+															'theme_location' => 'menu-1',
+															'menu_id'        => 'primary-menu',
+														)
+													);
+												?>
+										</div>
+									</nav>
+									
+								</div>
+							</div>
+						</div>
+						<!-- *** Offcanvas End -->
 						<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 							<div class="navbar-nav">
 								<?php
