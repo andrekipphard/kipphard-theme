@@ -42,7 +42,7 @@ $text = get_sub_field('text');
                             $icon = get_sub_field('icon');
                             $url = get_sub_field('url');
                         ?>
-                        <a href="<?= $url; ?>"> <li class="list-group-item bg-black rounded me-2 shadow">
+                        <a href="<?= $url; ?>" aria-label="Get more information"> <li class="list-group-item bg-black rounded me-2 shadow">
                             <i class="bi bi-<?= $icon; ?> rounded-circle bg-dark text-primary"></i>
                         </li></a>
                         <?php endwhile; ?>
@@ -89,7 +89,7 @@ $text = get_sub_field('text');
                         $alt_text = get_post_meta($mobile_image , '_wp_attachment_image_alt', true);
                         $laptop_image = get_sub_field('laptop_image');?>
                         <div class="carousel-item<?php if(get_row_index()==1):?> active<?php endif;?> text-end" style="background-image:url('<?= wp_get_attachment_image_url($laptop_image, 'large');?>'); background-size:contain; background-repeat:no-repeat; background-position:center;">
-                            <img src="<?= wp_get_attachment_image_url($mobile_image, 'large');?>" style="width:300px" alt="<?= $alt_text;?>">
+                            <img src="<?= wp_get_attachment_image_url($mobile_image, 'large');?>" style="width:300px; height:auto;" alt="<?= $alt_text;?>">
                         </div>
                     <?php endwhile;?>
                 <?php endif;?>

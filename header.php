@@ -33,7 +33,7 @@
 					<ul class="top-bar_list">
 
 						<li>
-						<i class="bi bi-envelope rounded-circle"></i><a href="mailto: info@kipphard.com" class="link-light">info@kipphard.com</a>
+						<i class="bi bi-envelope rounded-circle"></i><a href="mailto: info@kipphard.com" class="link-light" aria-label="Mail directly">info@kipphard.com</a>
 						</li>
 
 					</ul>

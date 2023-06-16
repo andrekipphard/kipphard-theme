@@ -58,7 +58,7 @@
 			</ul>
             
 			<div class="tab-content mt-5" id="myTabContent">
-                <div class="tab-pane active" id="work-experience-tab-pane" role="tabpanel" aria-labelledby="work-experience" tabindex="1">
+                <div class="tab-pane active" id="work-experience-tab-pane" role="tabpanel" aria-labelledby="work-experience" tabindex="0">
 					
                     <section class="timeline_area section_padding_130">
                         <div class="container">
@@ -181,7 +181,7 @@
                             $content = get_sub_field('content');?>
                             <div class="accordion-item border-0">
                                 <h6 class="accordion-header">
-                                <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Workexperience" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>">
+                                <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Workexperience" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>Workexperience">
                                     <?= $date; ?>, <?= $topic; ?> at <?= $place;?>
                                 </button>
                                 </h6>
@@ -204,7 +204,7 @@
                             $content = get_sub_field('content');?>
                             <div class="accordion-item border-0">
                                 <h6 class="accordion-header">
-                                <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Education" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>">
+                                <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Education" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>Education">
                                     <?= $date; ?>, <?= $topic; ?> at <?= $place;?>
                                 </button>
                                 </h6>

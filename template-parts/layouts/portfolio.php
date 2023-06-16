@@ -39,7 +39,7 @@ $subline = get_sub_field('subline');
 
             <div class="col-12 col-md-6 col-lg-4 pt-5">
 
-                <a href="<?= $portfolio_popup; ?>">
+                <a href="<?= $portfolio_popup; ?>" aria-label="Get more information about the portfolio">
 
                     <div class="card text-bg-dark p-5" style="width:95%;">
 

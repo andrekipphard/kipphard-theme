@@ -38,7 +38,7 @@
                             $icon = get_sub_field('icon');
                             $url = get_sub_field('url');
                         ?>
-                        <a href="<?= $url; ?>"> <li class="list-group-item bg-black rounded me-2 shadow">
+                        <a href="<?= $url; ?>" aria-label="Get more information"> <li class="list-group-item bg-black rounded me-2 shadow">
                             <i class="bi bi-<?= $icon; ?> rounded-circle bg-dark text-primary"></i>
                         </li></a>
                         <?php endwhile; ?>
@@ -50,46 +50,51 @@
                     <!-- Real Fields -->
                     <div class="row mb-3">
                         <div class="col">
-                            <label for="yourName" class="form-label text-uppercase h6">Your Name</label>
+                            <label for="nameqwer" class="form-label text-uppercase h6">Your Name</label>
                             <input type="text" class="form-control" aria-label="Your Name" id="nameqwer" name="nameqwer"> 
                         </div>
                         <div class="col">
-                            <label for="phoneNumber" class="form-label text-uppercase h6">Phone Number</label>
+                            <label for="phoneqwer" class="form-label text-uppercase h6">Phone Number</label>
                             <input type="text" class="form-control" aria-label="Phone Number" id="phoneqwer" name="phoneqwer">
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label text-uppercase h6">Email address *</label>
+                        <label for="emailqwer" class="form-label text-uppercase h6">Email address *</label>
                         <input type="email" class="form-control" id="emailqwer" name="emailqwer" aria-describedby="emailHelp" required>
                         <div id="emailHelp" class="form-text">I'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
-                        <label for="subject" class="form-label text-uppercase h6">Subject</label>
+                        <label for="subjectqwer" class="form-label text-uppercase h6">Subject</label>
                         <input type="text" class="form-control" id="subjectqwer" name="subjectqwer">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label text-uppercase h6">Your Message</label>
+                        <label for="messageqwer" class="form-label text-uppercase h6">Your Message</label>
                         <textarea class="form-control" id="messageqwer" name="messageqwer" rows="3"></textarea>
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="checkqwer" name="checkqwer" required>
-                        <label class="form-check-label" for="exampleCheck1">I have read and accept the privacy policy.</label>
+                        <label class="form-check-label" for="checkqwer">I have read and accept the privacy policy.</label>
                     </div>
                     <!-- Real Fields end -->
                     <!-- Honeypot -->
                     <div class="mb-3">
+                        <label for="name" class="form-label text-uppercase h6 ohnohoney">Your Name</label>
                         <input type="text" class="ohnohoney" autocomplete="off" id="name" placeholder="Your Name" name="name">
                     </div>
                     <div class="mb-3">
+                        <label for="phone" class="form-label text-uppercase h6 ohnohoney">Phone Number</label>
                         <input type="text" class="ohnohoney" autocomplete="off" id="phone" placeholder="Phone Number" name="phone">
                     </div>
                     <div class="mb-3">
+                        <label for="email" class="form-label text-uppercase h6 ohnohoney">Email address *</label>
                         <input type="email" class="ohnohoney" autocomplete="off" id="email" aria-describedby="emailHelp" placeholder="Email" name="email">
                     </div>
                     <div class="mb-3">
+                        <label for="subject" class="form-label text-uppercase h6 ohnohoney">Subject</label>
                         <input type="text" class="ohnohoney" autocomplete="off" id="subject" placeholder="Subject" name="subject">
                     </div>
                     <div class="mb-3">
+                        <label for="message" class="form-label text-uppercase h6 ohnohoney">Your Message</label>
                         <textarea class="ohnohoney" autocomplete="off" id="message" rows="3" placeholder="Your Message" name="message"></textarea>
                     </div>
                     <!-- Honeypot end -->

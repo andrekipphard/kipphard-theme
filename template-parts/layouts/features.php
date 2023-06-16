@@ -46,7 +46,7 @@ $text = get_sub_field('text');
 
             <div class="col-12 col-md-6 col-lg-4 pt-lg-5 pt-3 mb-3 mb-md-2 mb-lg-0">
 
-                <a href="#contact">
+                <a href="#contact" aria-label="Go to contact section">
 
                     <div class="card h-100 text-bg-dark p-lg-5 p-4">
 
