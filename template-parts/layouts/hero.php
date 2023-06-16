@@ -5,7 +5,7 @@ $text = get_sub_field('text');
 ?>
 <div class="row py-lg-5 pt-3 pb-5 border-bottom">
 
-    <div class="col-12 col-lg-6 py-lg-5 py-3 pe-5">
+    <div class="col-12 col-lg-6 py-lg-5 py-3 pe-5 d-flex justify-content-center flex-column">
 
         <div class="row py-1">
 
@@ -89,7 +89,7 @@ $text = get_sub_field('text');
                         $alt_text = get_post_meta($mobile_image , '_wp_attachment_image_alt', true);
                         $laptop_image = get_sub_field('laptop_image');?>
                         <div class="carousel-item<?php if(get_row_index()==1):?> active<?php endif;?> text-end" style="background-image:url('<?= wp_get_attachment_image_url($laptop_image, 'large');?>'); background-size:contain; background-repeat:no-repeat; background-position:center;">
-                            <img src="<?= wp_get_attachment_image_url($mobile_image, 'large');?>" style="width:300px; height:auto;" alt="<?= $alt_text;?>">
+                            <img src="<?= wp_get_attachment_image_url($mobile_image, 'large');?>" style="width:50%; height:auto;" alt="<?= $alt_text;?>">
                         </div>
                     <?php endwhile;?>
                 <?php endif;?>

@@ -221,7 +221,7 @@ $subline = get_sub_field('subline');
                                 <div class="card-body pb-0 pe-0 text-white ps-0">
                                     <img src="<?= wp_get_attachment_image_url($portfolio_image, 'large');?>" class="card-img-top pb-4" alt="<?= $alt_text;?>">
                                     <h5 class="card-title h6 pt-2 text-primary text-uppercase fs-6"><?= $portfolio_built_with; ?>, <?= $portfolio_type; ?>, <?= $portfolio_category; ?></h5>
-                                    <a target="_blank"<?php if($portfolio_url):?> href="<?= $portfolio_url;?><?php endif;?>" <?php if(!$portfolio_url):?> data-bs-toggle="modal" data-bs-target="#portfolioComingSoonModal"<?php endif;?>><h4 class="card-title pt-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4></a>
+                                    <a target="_blank"<?php if($portfolio_url):?> href="<?= $portfolio_url;?>"<?php endif;?> <?php if(!$portfolio_url):?> href="#portfolioComingSoonModal" data-bs-toggle="modal" data-bs-target="#portfolioComingSoonModal"<?php endif;?>><h4 class="card-title pt-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4></a>
                                 </div>
                             </div>
                         </a>
