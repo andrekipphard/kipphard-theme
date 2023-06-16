@@ -6,21 +6,21 @@ $subline = get_sub_field('subline');
 
     <div class="col-12 col-lg-12 pt-5 pb-5">
 
-        <div class="row pb-1 pt-1 h6 text-primary text-center text-uppercase">
+        <div class="row pb-1 pt-1">
 
             <div class="col">
 
-                <?= $subline; ?>
+                <h3 class="h6 text-primary text-center text-uppercase"><?= $subline; ?></h3>
 
             </div>
 
         </div>
 
-        <div class="row pb-1 pt-1 h2 text-center">
+        <div class="row pb-1 pt-1">
 
             <div class="col">
 
-                <?= $headline; ?>
+                <h2 class="h2 text-center"><?= $headline; ?></h2>
 
             </div>
 
@@ -45,7 +45,7 @@ $subline = get_sub_field('subline');
 
                         <div class="card-body text-white ps-0">
                             <img src="<?= wp_get_attachment_image_url($portfolio_image, 'large');?>" class="card-img-top pb-4" alt="<?= $alt_text;?>">
-                            <h6 class="card-title pt-2 text-primary text-uppercase fs-6"><?=$portfolio_category;?></h5>
+                            <h5 class="card-title pt-2 text-primary text-uppercase h6 fs-6"><?=$portfolio_category;?></h5>
                             <h4 class="card-title pt-2 pb-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4>
 
                         </div>

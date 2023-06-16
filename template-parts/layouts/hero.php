@@ -7,18 +7,18 @@ $text = get_sub_field('text');
 
     <div class="col-12 col-lg-6 py-lg-5 py-3 pe-5">
 
-        <div class="row py-1 h6 text-primary text-uppercase">
+        <div class="row py-1">
 
             <div class="col">
-                <?= $subline;?>
+                <h2 class="h6 text-primary text-uppercase"><?= $subline;?></h2>
             </div>
 
         </div>
 
-        <div class="row py-1 h1">
+        <div class="row py-1">
 
             <div class="col">
-                <?= $headline;?>
+                <h1 class="h1"><?= $headline;?></h1>
             </div>
 
         </div>
@@ -31,11 +31,11 @@ $text = get_sub_field('text');
 
         </div>
 
-        <div class="row">
+        <div class="row mt-3">
 
             <div class="col">
 
-                    <p class="text-light fw-light social-media-hero text-white">Social Media</p>
+                    <h3 class="text-light fw-light social-media-hero text-white" style="font-size:1.25rem">Social Media</h3>
                     <?php if( have_rows('social_media')): ?>
                     <ul class="list-group list-group-horizontal list-hero">
                         <?php while( have_rows('social_media') ): the_row();
@@ -54,7 +54,7 @@ $text = get_sub_field('text');
             <div class="col">
 
                 <?php if( have_rows('skills')): ?>
-                    <p class="text-light fw-light best-skills-hero">Best Skills</p>
+                    <h3 class="text-light fw-light best-skills-hero" style="font-size:1.25rem;">Best Skills</h3>
                     
                         <ul class="list-group list-group-horizontal list-hero">
                         <?php while( have_rows('skills') ): the_row();

@@ -11,7 +11,7 @@ $text = get_sub_field('text');
 
             <div class="col">
 
-                <?=$subline;?>
+                <h3 class="h6 text-primary text-uppercase"><?=$subline;?></h3>
 
             </div>
 
@@ -21,7 +21,7 @@ $text = get_sub_field('text');
 
             <div class="col">
 
-                 <?=$headline;?> 
+                <h2><?=$headline;?></h2>
 
             </div>
 
@@ -53,7 +53,7 @@ $text = get_sub_field('text');
                         <div class="card-body d-flex flex-column ps-0">
                             <i class="bi text-primary fs-1 bi-<?=$feature_icon;?>"></i>
                             <div class="h-100 d-flex justify-content-between flex-column">
-                                <h5 class="card-title pt-2 pb-2"><?= $feature_headline; ?></h5>
+                                <h4 class="card-title pt-2 pb-2 h5"><?= $feature_headline; ?></h4>
                                 <div class="d-flex justify-content-between flex-column">
                                     <p class="card-text pb-2"><?= $feature_text; ?></p>
                                     <i class="bi bi-arrow-right icon d-flex align-items-center text-primary mb-3 mb-lg-0" style="font-size:1.5rem;"><span class="ms-1 text-primary" style="font-size:1rem; font-style:normal;">Contact me now</span></i>

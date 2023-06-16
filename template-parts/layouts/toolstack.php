@@ -5,20 +5,20 @@
 ?>
 <div class="row py-3 py-lg-5 border-bottom toolstack" id="toolstack">
     <div class="col-12 col-lg-12 py-3 py-lg-5">
-        <div class="row pb-1 pt-2 h6 text-primary text-center text-uppercase">
+        <div class="row pb-1 pt-2">
 
             <div class="col">
 
-                <?= $subline;?>
+                <h3 class="h6 text-primary text-center text-uppercase"><?= $subline;?></h3>
 
             </div>
 
         </div>
-        <div class="row pb-1 pt-1 h2 text-center">
+        <div class="row pb-1 pt-1">
 
             <div class="col">
 
-                <?= $headline;?>
+                <h2 class="h2 text-center"><?= $headline;?></h2>
             
             </div>
 

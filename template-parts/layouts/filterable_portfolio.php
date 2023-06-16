@@ -4,14 +4,14 @@ $subline = get_sub_field('subline');
 ?>
 <div class="row py-3 py-lg-5 border-bottom portfolio" id="portfolio">
     <div class="col-12 col-lg-12 py-3 py-lg-5">
-        <div class="row pb-1 pt-1 h6 text-primary text-center text-uppercase">
+        <div class="row pb-1 pt-1">
             <div class="col">
-                <?= $subline; ?>  
+                <h3 class="h6 text-primary text-center text-uppercase"><?= $subline; ?></h3>
             </div>
         </div>
-        <div class="row pb-1 pt-1 h2 text-center">
+        <div class="row pb-1 pt-1">
             <div class="col">
-                <?= $headline; ?>
+                <h2 class="h2 text-center"><?= $headline; ?></h2>
             </div>
         </div>
         <!-- Add checkboxes for the filters -->
@@ -220,7 +220,7 @@ $subline = get_sub_field('subline');
                             <div class="card h-100 text-bg-dark p-lg-5 p-4" style="background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('<?= wp_get_attachment_image_url($portfolio_background_image, 'large');?>');">
                                 <div class="card-body pb-0 pe-0 text-white ps-0">
                                     <img src="<?= wp_get_attachment_image_url($portfolio_image, 'large');?>" class="card-img-top pb-4" alt="<?= $alt_text;?>">
-                                    <h6 class="card-title pt-2 text-primary text-uppercase fs-6"><?= $portfolio_built_with; ?>, <?= $portfolio_type; ?>, <?= $portfolio_category; ?></h6>
+                                    <h5 class="card-title h6 pt-2 text-primary text-uppercase fs-6"><?= $portfolio_built_with; ?>, <?= $portfolio_type; ?>, <?= $portfolio_category; ?></h5>
                                     <a target="_blank" href="<?= $portfolio_url;?>" <?php if(!$portfolio_url):?> data-bs-toggle="modal" data-bs-target="#portfolioComingSoonModal"<?php endif;?>><h4 class="card-title pt-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4></a>
                                 </div>
                             </div>

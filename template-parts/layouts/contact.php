@@ -12,11 +12,11 @@
     <div class="col-12 col-lg-12 py-3 py-lg-5">
         <div class="row text-center">
             <div class="col">
-                <div class="h6 pt-1 pb-1 text-primary text-uppercase">
-                    <?= $subline; ?>
+                <div class="pt-1 pb-1">
+                    <h3 class="h6 text-primary text-uppercase"><?= $subline; ?></h3>
                 </div>
                 <div class="h2 pt-1 pb-1">
-                    <?= $headline;?>
+                    <h2><?= $headline;?><h2>
                 </div>
                 </div>
             </div>
@@ -24,10 +24,10 @@
             <div class="col-lg-5 col-12 mb-sm-5 mb-md-0 mb-lg-0 testimonial-user-col rounded p-4 p-lg-5">
                 <img src="<?= wp_get_attachment_image_url($image, 'large');?>" class="rounded mb-3" alt="<?= $alt_text;?>">
                 <div class="h3 pb-1">
-                    <? $name;?>
+                    <h4><? $name;?></h4>
                 </div>
                 <div class="h5 pb-1">
-                    <? $title; ?>
+                    <h5><? $title; ?><h5>
                 </div>
                 <div class="p pb-3">
                     <?= $text;?>

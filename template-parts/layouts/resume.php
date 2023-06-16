@@ -11,21 +11,21 @@
 
     <div class="col-12 col-lg-12 py-3 py-lg-5">
 
-        <div class="row pb-1 pt-2 h6 text-primary text-center text-uppercase">
+        <div class="row pb-1 pt-2">
 
             <div class="col">
 
-                <?= $subline;?>
+                <h3 class="h6 text-primary text-center text-uppercase"><?= $subline;?></h3>
 
             </div>
 
         </div>
 
-        <div class="row pb-1 pt-1 h2 text-center">
+        <div class="row pb-1 pt-1">
 
             <div class="col">
 
-                <?= $headline;?>
+                <h2 class="h2 text-center"><?= $headline;?></h2>
             
             </div>
 
@@ -66,12 +66,8 @@
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <!-- Section Heading-->
                                     <div class="section_heading text-center">
-                                        <div class="h6 text-primary text-center text-uppercase">
-                                        <?= $work_experience_start_date;?> - <?= $work_experience_finish_date;?>
-                                        </div>
-                                        <div class="h3">
-                                            Work Experience Timeline
-                                        </div>
+                                        <h5 class="h6 text-primary text-center text-uppercase"><?= $work_experience_start_date;?> - <?= $work_experience_finish_date;?></h5>
+                                        <h4 class="h4">Work Experience Timeline</h4>
                                         <div class="line"></div>
                                     </div>
                                 </div>
@@ -90,20 +86,14 @@
                                         <!-- Single Timeline Content-->
                                         <div class="single-timeline-area">
                                             <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                                                <div class="h6 text-primary text-uppercase mb-0">
-                                                    <?= $date;?>
-                                                </div>
+                                                <h6 class="h6 text-primary text-uppercase mb-0"><?= $date;?></h6>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 col-md-10 col-lg-10">
                                                     <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                                                         <div class="timeline-text">
-                                                            <div class="h4">
-                                                                <?= $topic; ?>
-                                                            </div>
-                                                            <div class="h6 text-primary mb-4">
-                                                                <?= $place; ?>
-                                                            </div>
+                                                            <h5 class="h4"><?= $topic; ?></h5>
+                                                                <h6 class="h6 text-primary mb-4"><?= $place; ?></h6>
                                                             <p><?= $content; ?></p>
                                                         </div>
                                                     </div>
@@ -129,12 +119,8 @@
                                 <div class="col-12 col-sm-8 col-lg-6">
                                     <!-- Section Heading-->
                                     <div class="section_heading text-center">
-                                        <div class="h6 text-primary text-center text-uppercase">
-                                        <?= $education_start_date;?> - <?= $education_finish_date;?>
-                                        </div>
-                                        <div class="h3">
-                                            Education Timeline
-                                        </div>
+                                        <h5 class="h6 text-primary text-center text-uppercase"><?= $education_start_date;?> - <?= $education_finish_date;?></h5>
+                                        <h4 class="h3">Education Timeline</h4>
                                         <div class="line"></div>
                                     </div>
                                 </div>
@@ -153,20 +139,14 @@
                                         <!-- Single Timeline Content-->
                                         <div class="single-timeline-area">
                                             <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                                                <div class="h6 text-primary text-uppercase mb-0">
-                                                    <?= $date;?>
-                                                </div>
+                                                <h6 class="h6 text-primary text-uppercase mb-0"><?= $date;?></h6>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 col-md-10 col-lg-10">
                                                     <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
                                                         <div class="timeline-text">
-                                                            <div class="h4">
-                                                                <?= $topic; ?>
-                                                            </div>
-                                                            <div class="h6 text-primary mb-4">
-                                                                <?= $place; ?>
-                                                            </div>
+                                                            <h5 class="h4"><?= $topic; ?></h5>
+                                                            <h6 class="h6 text-primary mb-4"><?= $place; ?></h6>
                                                             <p><?= $content; ?></p>
                                                         </div>
                                                     </div>
@@ -191,7 +171,7 @@
 
         <div class="row pt-4 desktop-hide">
             <div class="col">
-                <div class="h4 text-primary text-center">Work Experience</div>
+                <h5 class="h4 text-primary text-center">Work Experience</h5>
                 <div class="accordion" id="accordionWorkexperience">
                     <?php if( have_rows('experience')):
                         while( have_rows('experience')): the_row();
@@ -200,11 +180,11 @@
                             $place = get_sub_field('place');
                             $content = get_sub_field('content');?>
                             <div class="accordion-item border-0">
-                                <h2 class="accordion-header">
+                                <h6 class="accordion-header">
                                 <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Workexperience" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>">
                                     <?= $date; ?>, <?= $topic; ?> at <?= $place;?>
                                 </button>
-                                </h2>
+                                </h6>
                                 <div id="collapse<?php echo get_row_index();?>Workexperience" class="accordion-collapse collapse<?php if(get_row_index()==1):?> show<?php endif;?>" data-bs-parent="#accordionWorkexperience">
                                     <div class="accordion-body">
                                     <?= $content;?>
@@ -214,7 +194,7 @@
                         <?php endwhile;?>
                     <?php endif;?>
                 </div>
-                <div class="h4 text-primary text-center mt-5">Education</div>
+                <h5 class="h4 text-primary text-center mt-5">Education</h5>
                 <div class="accordion" id="accordionEducation">
                     <?php if( have_rows('education')):
                         while( have_rows('education')): the_row();
@@ -223,11 +203,11 @@
                             $place = get_sub_field('place');
                             $content = get_sub_field('content');?>
                             <div class="accordion-item border-0">
-                                <h2 class="accordion-header">
+                                <h6 class="accordion-header">
                                 <button class="accordion-button<?php if(get_row_index()!=1):?> collapsed<?php endif;?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo get_row_index();?>Education" <?php if(get_row_index()==1):?>aria-expanded="true" <?php endif;?>aria-controls="collapse<?php echo get_row_index();?>">
                                     <?= $date; ?>, <?= $topic; ?> at <?= $place;?>
                                 </button>
-                                </h2>
+                                </h6>
                                 <div id="collapse<?php echo get_row_index();?>Education" class="accordion-collapse collapse<?php if(get_row_index()==1):?> show<?php endif;?>" data-bs-parent="#accordionEducation">
                                     <div class="accordion-body">
                                     <?= $content;?>
