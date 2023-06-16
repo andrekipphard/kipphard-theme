@@ -214,8 +214,8 @@ $subline = get_sub_field('subline');
                     $portfolio_background_image = get_sub_field('portfolio_background_image');
                     $portfolio_url = get_sub_field('portfolio_url');
             ?>
-                    <div class="col-12 col-md-6 col-lg-4 pt-3 mb-lg-3 pb-3 portfolio-item" data-built-with="<?= $portfolio_built_with; ?>" data-types="<?= $portfolio_type; ?>" data-categories="<?= $portfolio_category; ?>">
-                        <a target="_blank" href="<?= $portfolio_popup; ?>">
+                    <div class="col-12 col-md-6 col-lg-4 pt-3 pb-3 portfolio-item" data-built-with="<?= $portfolio_built_with; ?>" data-types="<?= $portfolio_type; ?>" data-categories="<?= $portfolio_category; ?>">
+                        <?php if($portfolio_popup):?><a target="_blank" href="<?= $portfolio_popup; ?>"><?php endif;?>
 
                             <div class="card h-100 text-bg-dark p-lg-5 p-4" style="background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('<?= wp_get_attachment_image_url($portfolio_background_image, 'large');?>');">
                                 <div class="card-body pb-0 pe-0 text-white ps-0">
@@ -224,7 +224,7 @@ $subline = get_sub_field('subline');
                                     <a target="_blank"<?php if($portfolio_url):?> href="<?= $portfolio_url;?>"<?php endif;?> <?php if(!$portfolio_url):?> href="#portfolioComingSoonModal" data-bs-toggle="modal" data-bs-target="#portfolioComingSoonModal"<?php endif;?>><h4 class="card-title pt-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4></a>
                                 </div>
                             </div>
-                        </a>
+                            <?php if($portfolio_popup):?></a><?php endif;?>
                     </div>
             <?php
                 endwhile;
