@@ -86,9 +86,10 @@ $text = get_sub_field('text');
                 <?php if(have_rows('slider')):?>
                     <?php while(have_rows('slider')): the_row();
                         $mobile_image = get_sub_field('mobile_image');
+                        $alt_text = get_post_meta($mobile_image , '_wp_attachment_image_alt', true);
                         $laptop_image = get_sub_field('laptop_image');?>
                         <div class="carousel-item<?php if(get_row_index()==1):?> active<?php endif;?> text-end" style="background-image:url('<?= wp_get_attachment_image_url($laptop_image, 'large');?>'); background-size:contain; background-repeat:no-repeat; background-position:center;">
-                            <img src="<?= wp_get_attachment_image_url($mobile_image, 'large');?>" style="width:300px">
+                            <img src="<?= wp_get_attachment_image_url($mobile_image, 'large');?>" style="width:300px" alt="<?= $alt_text;?>">
                         </div>
                     <?php endwhile;?>
                 <?php endif;?>

@@ -219,7 +219,7 @@ function form_submit_action() {
 	  // But on this example im gonna show you how send an email, create your own custom html body format.
 	  
 	  // Send to admin
-	  $to = 'akipphard@yahoo.de';//get_bloginfo('admin_email'); // or 'sendee@email.com' to specify email
+	  $to = get_bloginfo('admin_email'); // or 'sendee@email.com' to specify email
 	  // Email subject
 	  $subject = 'New Contact Request | kipphard.com';
 	  $subject_customer = 'I Received Your Contact Request | kipphard.com';
@@ -237,7 +237,7 @@ function form_submit_action() {
 	  wp_mail( $email, $subject_customer, $body_customer, $headers);
 	  
 	  // Then redirect to desired page
-	  $redirect = add_query_arg ('kontaktformular', 'gesendet', '/#contact');
+	  $redirect = add_query_arg ('kontaktformular', 'gesendet', '/#form-id');
 	  wp_redirect($redirect);
 	  exit;
 	  //wp_redirect(home_url('/#contact'));

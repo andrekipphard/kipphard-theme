@@ -34,10 +34,11 @@
             <div class="row pt-4 pb-lg-4 d-flex justify-content-center">
                 
                 <?php while(have_rows('toolstack')):the_row();
-                    $image = get_sub_field('tool');?>
+                    $image = get_sub_field('tool');
+                    $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
                     <div class="col-6 col-lg-2 d-flex align-items-center justify-content-center">
                         <div class="card text-bg-dark p-5 mb-4">
-                            <img src="<?= wp_get_attachment_image_url($image, 'large');?>" class="img-fluid">
+                            <img src="<?= wp_get_attachment_image_url($image, 'large');?>" class="img-fluid" alt="<?= $alt_text;?>">
                         </div>
                     </div>
                 <?php endwhile;?>

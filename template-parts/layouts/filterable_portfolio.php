@@ -209,17 +209,19 @@ $subline = get_sub_field('subline');
                     $portfolio_category = get_sub_field('portfolio_category');
                     $portfolio_headline = get_sub_field('portfolio_headline');
                     $portfolio_image = get_sub_field('portfolio_image');
+                    $alt_text = get_post_meta($portfolio_image , '_wp_attachment_image_alt', true);
                     $portfolio_popup = get_sub_field('portfolio_popup');
                     $portfolio_background_image = get_sub_field('portfolio_background_image');
+                    $portfolio_url = get_sub_field('portfolio_url');
             ?>
                     <div class="col-12 col-md-6 col-lg-4 pt-3 mb-lg-3 pb-3 portfolio-item" data-built-with="<?= $portfolio_built_with; ?>" data-types="<?= $portfolio_type; ?>" data-categories="<?= $portfolio_category; ?>">
-                    <a href="<?= $portfolio_popup; ?>"<?php if(!$portfolio_popup):?> data-bs-toggle="modal" data-bs-target="#portfolioComingSoonModal"<?php endif;?>>
+                        <a target="_blank" href="<?= $portfolio_popup; ?>">
 
                             <div class="card h-100 text-bg-dark p-lg-5 p-4" style="background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('<?= wp_get_attachment_image_url($portfolio_background_image, 'large');?>');">
                                 <div class="card-body pb-0 pe-0 text-white ps-0">
-                                    <img src="<?= wp_get_attachment_image_url($portfolio_image, 'large');?>" class="card-img-top pb-4" alt="...">
+                                    <img src="<?= wp_get_attachment_image_url($portfolio_image, 'large');?>" class="card-img-top pb-4" alt="<?= $alt_text;?>">
                                     <h6 class="card-title pt-2 text-primary text-uppercase fs-6"><?= $portfolio_built_with; ?>, <?= $portfolio_type; ?>, <?= $portfolio_category; ?></h6>
-                                    <h4 class="card-title pt-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4>
+                                    <a target="_blank" href="<?= $portfolio_url;?>" <?php if(!$portfolio_url):?> data-bs-toggle="modal" data-bs-target="#portfolioComingSoonModal"<?php endif;?>><h4 class="card-title pt-2"><?= $portfolio_headline; ?><i class="bi bi-arrow-up-right features-icon ms-2 icon" style="color:#fff; font-size:1.25rem;"></i></h4></a>
                                 </div>
                             </div>
                         </a>
