@@ -29,7 +29,7 @@ $subline = get_sub_field('subline');
                             $built_with_list[] = $portfolio_built_with; // Add the value to the array
                             ?>
                             <label class="checkbox-inline me-3 text-white">
-                                <input type="checkbox" class="form-check-input portfolio-filter-desktop" value="<?= $portfolio_built_with; ?>"><?= $portfolio_built_with; ?>
+                                <input type="checkbox" class="form-check-input portfolio-filter-desktop me-1" value="<?= $portfolio_built_with; ?>"><?= $portfolio_built_with; ?>
                             </label>
                             <?php
                         }
@@ -47,7 +47,7 @@ $subline = get_sub_field('subline');
                             $type_list[] = $portfolio_type; // Add the value to the array
                             ?>
                             <label class="checkbox-inline me-3 text-white">
-                                <input type="checkbox" class="form-check-input portfolio-filter-type-desktop" value="<?= $portfolio_type; ?>"><?= $portfolio_type; ?>
+                                <input type="checkbox" class="form-check-input portfolio-filter-type-desktop me-1" value="<?= $portfolio_type; ?>"><?= $portfolio_type; ?>
                             </label>
                             <?php
                         }
@@ -120,7 +120,7 @@ $subline = get_sub_field('subline');
                                                         $built_with_list[] = $portfolio_built_with; // Add the value to the array
                                                         ?>
                                                         <label class="checkbox-inline me-3 text-white">
-                                                            <input type="checkbox" class="form-check-input portfolio-filter-mobile" value="<?= $portfolio_built_with; ?>"><?= $portfolio_built_with; ?>
+                                                            <input type="checkbox" class="form-check-input portfolio-filter-mobile me-1" value="<?= $portfolio_built_with; ?>"><?= $portfolio_built_with; ?>
                                                         </label>
                                                         <?php
                                                     }
@@ -150,7 +150,7 @@ $subline = get_sub_field('subline');
                                                         $type_list[] = $portfolio_type; // Add the value to the array
                                                         ?>
                                                         <label class="checkbox-inline me-3 text-white">
-                                                            <input type="checkbox" class="form-check-input portfolio-filter-type-mobile" value="<?= $portfolio_type; ?>"><?= $portfolio_type; ?>
+                                                            <input type="checkbox" class="form-check-input portfolio-filter-type-mobile me-1" value="<?= $portfolio_type; ?>"><?= $portfolio_type; ?>
                                                         </label>
                                                         <?php
                                                     }

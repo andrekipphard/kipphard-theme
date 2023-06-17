@@ -237,7 +237,7 @@ function form_submit_action() {
 	  wp_mail( $email, $subject_customer, $body_customer, $headers);
 	  
 	  // Then redirect to desired page
-	  $redirect = add_query_arg ('kontaktformular', 'gesendet', '/#form-id');
+	  $redirect = add_query_arg ('kontaktformular', 'gesendet', '/#contact');
 	  wp_redirect($redirect);
 	  exit;
 	  //wp_redirect(home_url('/#contact'));
