@@ -23,7 +23,7 @@
             </div>
 
         </div>
-        <div class="row py-lg-4">
+        <div class="row py-lg-0">
 
             <div class="col text-center">
                 <p class="text-light"><?= $text;?></p>

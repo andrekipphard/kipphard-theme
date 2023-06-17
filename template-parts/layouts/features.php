@@ -7,7 +7,7 @@ $text = get_sub_field('text');
 
     <div class="col-12 col-lg-12 py-3 py-lg-5">
     
-        <div class="row pt-1 pb-1 h6 text-primary text-uppercase">
+        <div class="row pt-1 pb-1 text-primary text-uppercase">
 
             <div class="col">
 
@@ -17,16 +17,16 @@ $text = get_sub_field('text');
 
         </div>
 
-        <div class="row pt-1 pb-1 h2">
+        <div class="row pt-1 pb-1">
 
             <div class="col">
 
-                <h2><?=$headline;?></h2>
+                <h2 class="h2"><?=$headline;?></h2>
 
             </div>
 
         </div>
-        <div class="row py-lg-4">
+        <div class="row py-lg-0">
 
             <div class="col">
                 <p class="text-light"><?= $text;?></p>

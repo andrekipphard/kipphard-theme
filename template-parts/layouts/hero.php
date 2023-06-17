@@ -23,7 +23,7 @@ $text = get_sub_field('text');
 
         </div>
 
-        <div class="row py-lg-4 py-0">
+        <div class="row py-lg-1 py-0">
 
             <div class="col">
                 <p class="text-light"><?= $text;?></p>
